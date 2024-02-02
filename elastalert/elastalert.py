@@ -43,6 +43,8 @@ from elastalert.util import (add_keyword_postfix, cronite_datetime_to_timestamp,
                              should_scrolling_continue, total_seconds, ts_add, ts_now, ts_to_dt, unix_to_dt,
                              ts_utc_to_tz)
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 class ElastAlerter(object):
     """ The main ElastAlert runner. This class holds all state about active rules,
